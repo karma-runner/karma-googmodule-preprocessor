@@ -1,0 +1,40 @@
+{
+  "name": "karma-googmodule",
+  "version": "0.1.0",
+  "description": "A Karma plugin to support Closure's goog.module().",
+  "main": "lib/googmodule.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mprobst/karma-googmodule.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-preprocessor",
+    "angularjs",
+    "angular",
+    "closure",
+    "goog.module"
+  ],
+  "author": "Martin Probst <martin@probst.io>",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "~1.4",
+    "grunt": "~0.4.1",
+    "grunt-npm": "~0.0.2",
+    "grunt-bump": "~0.0.11",
+    "grunt-simple-mocha": "~0.4",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-auto-release": "~0.0.3",
+    "sinon": "~1.10"
+  },
+  "peerDependencies": {
+    "karma": ">=0.9"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Martin Probst <martin@probst.io>"
+  ]
+}
