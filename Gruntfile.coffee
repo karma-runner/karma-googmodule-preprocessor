@@ -46,16 +46,6 @@ module.exports = (grunt) ->
           'test/**/*.spec.js'
         ]
 
-    karma:
-      client:
-        configFile: 'karma.conf.js'
-        autoWatch: false
-        singleRun: true
-      tdd:
-        configFile: 'karma.conf.js'
-        autoWatch: true
-        singleRun: false
-
     'npm-contributors':
       options:
         commitMessage: 'chore: update contributors'
@@ -68,12 +58,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-auto-release'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-bump'
-  grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-npm'
   grunt.loadNpmTasks 'grunt-simple-mocha'
 
   grunt.registerTask 'default', ['jshint', 'test']
-  grunt.registerTask 'test', ['karma:client', 'simplemocha:unit']
+  grunt.registerTask 'test', ['simplemocha:unit']
   grunt.registerTask 'release', 'Bump and publish to NPM.', (type) ->
     grunt.task.run [
       'npm-contributors'
