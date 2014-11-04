@@ -1,6 +1,6 @@
 {
   "name": "karma-googmodule-preprocessor",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Karma plugin to support Closure's goog.module().",
   "main": "lib/googmodule.js",
   "scripts": {
