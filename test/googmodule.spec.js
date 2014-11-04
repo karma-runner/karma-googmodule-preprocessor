@@ -39,4 +39,11 @@ describe('googmodule loader', function() {
         '}\n';
     sinon.assert.calledWith(doneFn, expected);
   });
+
+  it('handles modules starting with comments', function() {
+    preprocessor('/** @fileoverview Hello. */\n\n' +
+                 'goog.module(\'my.module\');\ncontent();',
+                 {originalPath: '/some/file.js'}, doneFn);
+    sinon.assert.calledWith(doneFn, sinon.match(/goog\.loadModule/));
+  });
 });
