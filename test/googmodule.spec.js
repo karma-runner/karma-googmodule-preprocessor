@@ -46,4 +46,10 @@ describe('googmodule loader', function() {
                  {originalPath: '/some/file.js'}, doneFn);
     sinon.assert.calledWith(doneFn, sinon.match(/goog\.loadModule/));
   });
+
+  it('handles goog.module statements after semicolons', function() {
+    preprocessor('var l5_cov=1; goog.module(\'my.module\');\ncontent();',
+                 {originalPath: '/some/file.js'}, doneFn);
+    sinon.assert.calledWith(doneFn, sinon.match(/goog\.loadModule/));
+  });
 });
