@@ -29,14 +29,11 @@ describe('googmodule loader', function() {
     preprocessor('goog.module(\'my.module\');\ncontent();',
                  {originalPath: '/some/file.js'}, doneFn);
     var expected =
-        '// Generated from /some/file.js by googmodule.js\n' +
-        'try {\n' +
-        '  goog.loadModule("goog.module(\'my.module\');\\n' +
-        'content();\\n//# sourceURL=http://googmodule/some/file.js");\n' +
-        '} catch (e) {\n' +
-        '  if (!e.fileName) e.message += " @ /some/file.js";\n' +
-        '  throw e;\n' +
-        '}\n';
+        '/* Generated from /some/file.js by karma-googmodule-preprocessor */ ' +
+        'goog.loadModule(function(exports) { goog.module(\'my.module\');\n' +
+        'content();;\n' +
+        '  return exports;\n' +
+        '});\n';
     sinon.assert.calledWith(doneFn, expected);
   });
 
