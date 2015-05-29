@@ -30,7 +30,7 @@ describe('googmodule loader', function() {
                  {originalPath: '/some/file.js'}, doneFn);
     var expected =
         '/* Generated from /some/file.js by karma-googmodule-preprocessor */ ' +
-        'goog.loadModule(function(exports) { goog.module(\'my.module\');\n' +
+        'goog.loadModule(function(exports) { "use strict"; goog.module(\'my.module\');\n' +
         'content();;\n' +
         '  return exports;\n' +
         '});\n';
