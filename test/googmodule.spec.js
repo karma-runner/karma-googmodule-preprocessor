@@ -11,7 +11,7 @@ describe('googmodule loader', function() {
   var preprocessor, doneFn;
 
   beforeEach(function() {
-    preprocessor = createPreprocessor(loggerMock);
+    preprocessor = createPreprocessor(loggerMock, '/base/path');
     doneFn = sinon.spy();
   });
 
@@ -27,13 +27,10 @@ describe('googmodule loader', function() {
 
   it('transforms goog.module files', function() {
     preprocessor('goog.module(\'my.module\');\ncontent();',
-                 {originalPath: '/some/file.js'}, doneFn);
-    var expected =
-        '/* Generated from /some/file.js by karma-googmodule-preprocessor */ ' +
-        'goog.loadModule(function(exports) { "use strict"; goog.module(\'my.module\');\n' +
-        'content();;\n' +
-        '  return exports;\n' +
-        '});\n';
+                 {originalPath: '/base/path/some/file.js'}, doneFn);
+    var expected = '/* Generated from some/file.js by karma-googmodule-preprocessor */ ' +
+                   'goog.loadModule("goog.module(\'my.module\');\\ncontent();\\n' +
+                   '//# sourceURL=some/file.js\\n");\n';
     sinon.assert.calledWith(doneFn, expected);
   });
 
