@@ -30,7 +30,7 @@ describe('googmodule loader', function() {
                  {originalPath: '/base/path/some/file.js'}, doneFn);
     var expected = '/* Generated from some/file.js by karma-googmodule-preprocessor */ ' +
                    'goog.loadModule("goog.module(\'my.module\');\\ncontent();\\n' +
-                   '//# sourceURL=some/file.js\\n");\n';
+                   '//# sourceURL=http://googmodule/base/some/file.js\\n");\n';
     sinon.assert.calledWith(doneFn, expected);
   });
 
