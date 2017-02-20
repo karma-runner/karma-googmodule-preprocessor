@@ -31,7 +31,7 @@
     "sinon": "~1.10"
   },
   "peerDependencies": {
-    "karma": ">=0.9"
+    "karma": ">=1.5.0"
   },
   "license": "MIT",
   "contributors": [
