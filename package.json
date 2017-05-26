@@ -21,7 +21,7 @@
   "author": "Martin Probst <martin@probst.io>",
   "dependencies": {},
   "devDependencies": {
-    "chai": "~1.4",
+    "chai": "~4.0.0",
     "grunt": "~0.4.1",
     "grunt-npm": "~0.0.2",
     "grunt-bump": "~0.0.11",
