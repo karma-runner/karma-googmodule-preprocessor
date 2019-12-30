@@ -28,9 +28,16 @@ describe('googmodule loader', function() {
   it('transforms goog.module files', function() {
     preprocessor('goog.module(\'my.module\');\ncontent();',
                  {originalPath: '/base/path/some/file.js'}, doneFn);
-    var expected = '/* Generated from some/file.js by karma-googmodule-preprocessor */ ' +
-                   'goog.loadModule("goog.module(\'my.module\');\\ncontent();\\n' +
-                   '//# sourceURL=http://googmodule/base/some/file.js\\n");\n';
+    var expected = `/* Generated from some/file.js by karma-googmodule-preprocessor */
+goog.loadModule(function(exports) {
+"use strict";
+goog.module('my.module');
+content();
+//# sourceURL=http://googmodule/base/some/file.js
+return exports;
+});
+`;
+
     sinon.assert.calledWith(doneFn, expected);
   });
 
