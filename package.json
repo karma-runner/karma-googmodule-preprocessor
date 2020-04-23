@@ -21,14 +21,14 @@
   "author": "Martin Probst <martin@probst.io>",
   "dependencies": {},
   "devDependencies": {
-    "chai": "~1.4",
-    "grunt": "~0.4.1",
+    "chai": "~3.5.0",
+    "grunt": "~1.0.1",
     "grunt-npm": "~0.0.2",
-    "grunt-bump": "~0.0.11",
+    "grunt-bump": "~0.8.0",
     "grunt-simple-mocha": "~0.4",
-    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-jshint": "~1.0.0",
     "grunt-auto-release": "~0.0.3",
-    "sinon": "~1.10"
+    "sinon": "~1.17.6"
   },
   "peerDependencies": {
     "karma": ">=0.9"
