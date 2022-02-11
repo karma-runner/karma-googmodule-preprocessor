@@ -33,7 +33,11 @@
   },
   "license": "MIT",
   "contributors": [
+    "Mark Ethan Trostler <mark@zzo.com>",
+    "Sam McCall <sam.mccall@gmail.com>",
     "Thomas ten Cate <ttencate@gmail.com>",
-    "Martin Probst <martinprobst@google.com>"
+    "johnjbarton <johnjbarton@johnjbarton.com>",
+    "Martin Probst <martinprobst@google.com>",
+    "William Wall <wwall@caci.com>"
   ]
 }
